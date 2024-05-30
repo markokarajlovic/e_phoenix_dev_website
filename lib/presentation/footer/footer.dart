@@ -2,15 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
+  final bool hasMobileFrame;
+
   const Footer({
     super.key,
+    required this.hasMobileFrame,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(12),
-      color: Colors.red.shade50,
+      decoration: BoxDecoration(
+        color: Colors.red.shade50,
+        borderRadius: hasMobileFrame ? const BorderRadius.all(Radius.circular(8)) : null,
+      ),
       child: Column(
         children: [
           Row(

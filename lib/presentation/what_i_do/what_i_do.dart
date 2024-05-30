@@ -2,11 +2,16 @@ import 'package:e_phoenix_dev_website/presentation/what_i_do/service_card.dart';
 import 'package:flutter/material.dart';
 
 class WhatIDo extends StatelessWidget {
-  const WhatIDo({super.key});
+  final bool hasMobileFrame;
+
+  const WhatIDo({
+    super.key,
+    required this.hasMobileFrame,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final cardSize = (MediaQuery.sizeOf(context).width - 8 - 32 - 16) / 2;
+    final cardSize = hasMobileFrame ? (600 - 32 - 8 - 16) / 2 : (MediaQuery.sizeOf(context).width - 8 - 32 - 16) / 2;
     return Container(
       padding: const EdgeInsets.all(16),
       width: double.infinity,
@@ -54,7 +59,8 @@ class WhatIDo extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 22,
                     ),
-                  ),Text(
+                  ),
+                  Text(
                     ' • .NET for robust enterprise applications',
                     style: TextStyle(
                       fontSize: 22,

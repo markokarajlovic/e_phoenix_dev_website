@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 
 class AboutMe extends StatelessWidget {
-  const AboutMe({super.key});
+  final bool hasMobileFrame;
+
+  const AboutMe({
+    super.key,
+    required this.hasMobileFrame,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      width: double.infinity,
-      color: Colors.white10,
+      width: hasMobileFrame ? 600 : double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: hasMobileFrame ? const BorderRadius.all(Radius.circular(8)) : null,
+      ),
       child: Column(
         children: [
           const Align(

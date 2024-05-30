@@ -2,14 +2,22 @@ import 'package:e_phoenix_dev_website/presentation/portfolio/portfolio_item.dart
 import 'package:flutter/material.dart';
 
 class Portfolio extends StatelessWidget {
-  const Portfolio({super.key});
+  final bool hasMobileFrame;
+
+  const Portfolio({
+    super.key,
+    required this.hasMobileFrame,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       width: double.infinity,
-      color: Colors.white10,
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: hasMobileFrame ? const BorderRadius.all(Radius.circular(8)) : null,
+      ),
       child: const Column(
         children: [
           Align(

@@ -7,17 +7,15 @@ import 'package:flutter/material.dart';
 import 'about_me/about_me.dart';
 
 class EPhoenixDevWebsite extends StatelessWidget {
-  final bool hasMobileFrame;
-
   const EPhoenixDevWebsite({
     super.key,
-    required this.hasMobileFrame,
   });
 
   @override
   Widget build(BuildContext context) {
+    final bool hasMobileFrame = MediaQuery.sizeOf(context).width > 600;
     return Scaffold(
-      backgroundColor: hasMobileFrame ? Colors.white10 : Colors.black54,
+      backgroundColor: Colors.black54,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
@@ -34,14 +32,20 @@ class EPhoenixDevWebsite extends StatelessWidget {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const AboutMe(),
-              const WhatIDo(),
-              const Portfolio(),
-              ContactForm(hasMobileFrame: hasMobileFrame),
-              const Footer(),
-            ],
+          child: Center(
+            child: SizedBox(
+              width: hasMobileFrame ? 600 : null,
+              child: Column(
+                children: [
+                  AboutMe(hasMobileFrame: hasMobileFrame),
+                  WhatIDo(hasMobileFrame: hasMobileFrame),
+                  Portfolio(hasMobileFrame: hasMobileFrame),
+                  ContactForm(hasMobileFrame: hasMobileFrame),
+                  Footer(hasMobileFrame: hasMobileFrame),
+                  const SizedBox(height: 16),
+                ],
+              ),
+            ),
           ),
         ),
       ),
