@@ -136,40 +136,40 @@ class Footer extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 18),
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Partnership with: ',
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Row(
-              children: [
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () {
-                      launchUrl(
-                        Uri.parse('https://www.designrush.com'),
-                        webOnlyWindowName: '_blank',
-                      );
-                    },
-                    child: const Text(
-                      'https://www.designrush.com',
-                      style: TextStyle(
-                        fontSize: 20,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // const Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: Text(
+          //     'Partnership with: ',
+          //     style: TextStyle(
+          //       fontSize: 20,
+          //     ),
+          //   ),
+          // ),
+          // Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: Row(
+          //     children: [
+          //       MouseRegion(
+          //         cursor: SystemMouseCursors.click,
+          //         child: GestureDetector(
+          //           onTap: () {
+          //             launchUrl(
+          //               Uri.parse('https://www.designrush.com'),
+          //               webOnlyWindowName: '_blank',
+          //             );
+          //           },
+          //           child: const Text(
+          //             'https://www.designrush.com',
+          //             style: TextStyle(
+          //               fontSize: 20,
+          //               decoration: TextDecoration.underline,
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           const Divider(
             indent: 12,
             endIndent: 12,
