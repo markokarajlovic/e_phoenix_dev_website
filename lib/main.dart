@@ -17,14 +17,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'ePhoenix dev',
         debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.dark,
-        darkTheme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.red.shade900),
-          useMaterial3: true,
-        ),
+        // themeMode: ThemeMode.dark,
+        // darkTheme: ThemeData(
+        //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.red.shade900),
+        //   useMaterial3: true,
+        // ),
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.red.shade900),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
           useMaterial3: true,
+          fontFamily: 'Lato',
         ),
         home: const EPhoenixDevWebsite());
   }

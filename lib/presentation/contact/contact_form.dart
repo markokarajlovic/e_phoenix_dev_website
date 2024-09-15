@@ -1,3 +1,5 @@
+import 'package:e_phoenix_dev_website/consts/text_consts.dart';
+import 'package:e_phoenix_dev_website/presentation/widgets/custom_card.dart';
 import 'package:emailjs/emailjs.dart';
 import 'package:flutter/material.dart';
 
@@ -25,146 +27,199 @@ class _ContactFormState extends State<ContactForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      width: double.infinity,
-      child: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Contact Me',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 30,
+    return SizedBox(width: widget.hasMobileFrame ? 600 : null,
+      child: CustomCard(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+               Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Contact Me',
+                  style: title1,
                 ),
               ),
-            ),
-            SizedBox(
-              height: 98,
-              child: TextFormField(
-                controller: firstNameController,
-                cursorColor: Colors.white,
-                validator: (value) {
-                  if (value?.isEmpty == true) {
-                    return 'Enter a first name';
-                  } else {
-                    return null;
-                  }
-                },
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 26,
-                ),
-                textCapitalization: TextCapitalization.words,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0.2),
-                  floatingLabelStyle: const TextStyle(
+              const SizedBox(height: 16),
+              SizedBox(
+                height: 98,
+                child: TextFormField(
+                  controller: firstNameController,
+                  cursorColor: Colors.white,
+                  validator: (value) {
+                    if (value?.isEmpty == true) {
+                      return 'Enter a first name';
+                    } else {
+                      return null;
+                    }
+                  },
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 26,
                   ),
-                  labelStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.2),
+                    floatingLabelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelText: 'First Name *',
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
                   ),
-                  labelText: 'First Name *',
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                  focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                  errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 98,
-              child: TextFormField(
-                controller: lastNameController,
-                cursorColor: Colors.white,
-                validator: (value) {
-                  if (value?.isEmpty == true) {
-                    return 'Enter a last name';
-                  } else {
-                    return null;
-                  }
-                },
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 26,
-                ),
-                textCapitalization: TextCapitalization.words,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0.2),
-                  floatingLabelStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                  labelStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                  labelText: 'Last Name *',
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                  focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                  errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 98,
-              child: TextFormField(
-                controller: emailController,
-                cursorColor: Colors.white,
-                validator: (value) {
-                  RegExp regex = RegExp(
-                    r'^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}])|(([a-zA-Z\-\d]+\.)+[a-zA-Z]{2,}))$',
-                  );
+              SizedBox(
+                height: 98,
+                child: TextFormField(
+                  controller: lastNameController,
+                  cursorColor: Colors.white,
+                  validator: (value) {
+                    if (value?.isEmpty == true) {
+                      return 'Enter a last name';
+                    } else {
+                      return null;
+                    }
+                  },
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                  ),
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.2),
+                    floatingLabelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelText: 'Last Name *',
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 98,
+                child: TextFormField(
+                  controller: emailController,
+                  cursorColor: Colors.white,
+                  validator: (value) {
+                    RegExp regex = RegExp(
+                      r'^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}])|(([a-zA-Z\-\d]+\.)+[a-zA-Z]{2,}))$',
+                    );
 
-                  if (value!.contains(' ')) return 'Please remove white spaces';
+                    if (value!.contains(' ')) return 'Please remove white spaces';
 
-                  return value.isEmpty
-                      ? 'Email is required'
-                      : !regex.hasMatch(value)
-                          ? 'Invalid Email format'
-                          : null;
-                },
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 26,
-                ),
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0.2),
-                  floatingLabelStyle: const TextStyle(
+                    return value.isEmpty
+                        ? 'Email is required'
+                        : !regex.hasMatch(value)
+                            ? 'Invalid Email format'
+                            : null;
+                  },
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 26,
                   ),
-                  labelStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.2),
+                    floatingLabelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelText: 'Email *',
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
                   ),
-                  labelText: 'Email *',
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                  focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                  errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 98,
-              child: TextFormField(
-                controller: phoneController,
+              SizedBox(
+                height: 98,
+                child: TextFormField(
+                  controller: phoneController,
+                  cursorColor: Colors.white,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                  ),
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.2),
+                    floatingLabelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelText: 'Phone Number',
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 98,
+                child: TextFormField(
+                  controller: companyController,
+                  cursorColor: Colors.white,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                  ),
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.2),
+                    floatingLabelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    labelText: 'Company / Organization',
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                  ),
+                ),
+              ),
+              TextFormField(
+                controller: messageController,
                 cursorColor: Colors.white,
+                maxLines: 4,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 26,
@@ -181,89 +236,30 @@ class _ContactFormState extends State<ContactForm> {
                     color: Colors.white,
                     fontSize: 20,
                   ),
-                  labelText: 'Phone Number',
+                  labelText: 'Message:',
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                   focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
                   focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
                   errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 98,
-              child: TextFormField(
-                controller: companyController,
-                cursorColor: Colors.white,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 26,
-                ),
-                textCapitalization: TextCapitalization.words,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0.2),
-                  floatingLabelStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                  labelStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                  labelText: 'Company / Organization',
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                  focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                  errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
-                ),
-              ),
-            ),
-            TextFormField(
-              controller: messageController,
-              cursorColor: Colors.white,
-              maxLines: 4,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 26,
-              ),
-              textCapitalization: TextCapitalization.words,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white.withOpacity(0.2),
-                floatingLabelStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-                labelStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-                labelText: 'Message:',
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
-              ),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              height: 54,
-              child: ElevatedButton(
-                onPressed: () {
-                  _sendEmail();
-                },
-                child: const Text(
-                  'Send',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black,
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                height: 54,
+                child: ElevatedButton(
+                  onPressed: () {
+                    _sendEmail();
+                  },
+                  child:  Text(
+                    'Send',
+                    style: buttonStyle,
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 32),
-          ],
+
+            ],
+          ),
         ),
       ),
     );

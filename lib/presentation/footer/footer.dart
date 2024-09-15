@@ -1,3 +1,5 @@
+import 'package:e_phoenix_dev_website/consts/color_consts.dart';
+import 'package:e_phoenix_dev_website/consts/text_consts.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,12 +14,12 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Colors.red.shade50,
-        borderRadius: hasMobileFrame ? const BorderRadius.all(Radius.circular(8)) : null,
+      padding: const EdgeInsets.all(8),
+      decoration: const BoxDecoration(
+        color: kCardBackground,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,109 +31,80 @@ class Footer extends StatelessWidget {
                 height: 32,
               ),
               const SizedBox(width: 8),
-              const Text(
+              Text(
                 'ePhoenix Dev',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: title2,
               ),
             ],
           ),
           const SizedBox(height: 18),
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'CONTACT',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
+          Text(
+            'CONTACT',
+            style: footerTitle,
           ),
           const SizedBox(height: 4),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () {
-                  final Uri emailLaunchUri = Uri(
-                    scheme: 'mailto',
-                    path: 'marko.karajlovic@gmail.com',
-                  );
-                  launchUrl(
-                    emailLaunchUri,
-                  );
-                },
-                child: const Text(
-                  'marko.karajlovic@gmail.com',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                final Uri emailLaunchUri = Uri(
+                  scheme: 'mailto',
+                  path: 'marko.karajlovic@gmail.com',
+                );
+                launchUrl(
+                  emailLaunchUri,
+                );
+              },
+              child: Text(
+                'marko.karajlovic@gmail.com',
+                style: footerBody,
               ),
             ),
           ),
           const SizedBox(height: 18),
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'ADDRESS',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
+          Text(
+            'ADDRESS',
+            style: footerTitle,
           ),
           const SizedBox(height: 4),
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Novi Sad, Serbia',
-              style: TextStyle(fontSize: 20),
-            ),
+          Text(
+            'Novi Sad, Serbia',
+            style: footerBody,
           ),
           const SizedBox(height: 18),
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'SOCIAL',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
+          Text(
+            'SOCIAL',
+            style: footerTitle,
           ),
           const SizedBox(height: 4),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () {
-                  launchUrl(
-                    Uri.parse('https://www.linkedin.com/in/marko-karajlovic-4992917b/'),
-                    webOnlyWindowName: '_blank',
-                  );
-                },
-                child: const Text(
-                  'LinkedIn',
-                  style: TextStyle(
-                    fontSize: 20,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                launchUrl(
+                  Uri.parse('https://www.linkedin.com/in/marko-karajlovic-4992917b/'),
+                  webOnlyWindowName: '_blank',
+                );
+              },
+              child: Text(
+                'LinkedIn',
+                style: footerBodyLink,
               ),
             ),
           ),
           const SizedBox(height: 4),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () {
-                  launchUrl(
-                    Uri.parse('https://medium.com/@phoenixinerfire'),
-                    webOnlyWindowName: '_blank',
-                  );
-                },
-                child: const Text(
-                  'Medium',
-                  style: TextStyle(
-                    fontSize: 20,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                launchUrl(
+                  Uri.parse('https://medium.com/@phoenixinerfire'),
+                  webOnlyWindowName: '_blank',
+                );
+              },
+              child: Text(
+                'Medium',
+                style: footerBodyLink,
               ),
             ),
           ),
@@ -170,14 +143,10 @@ class Footer extends StatelessWidget {
           //     ],
           //   ),
           // ),
-          const Divider(
-            indent: 12,
-            endIndent: 12,
-            thickness: 2,
-          ),
-          const Text(
+          const Divider(indent: 16, endIndent: 16, thickness: 1, color: kDividerColor),
+          Text(
             '© 2024 by ePhoenix Dev',
-            style: TextStyle(fontSize: 20),
+            style: footerRightsReserved,
           ),
         ],
       ),

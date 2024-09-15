@@ -1,4 +1,6 @@
+import 'package:e_phoenix_dev_website/consts/text_consts.dart';
 import 'package:e_phoenix_dev_website/presentation/what_i_do/service_card.dart';
+import 'package:e_phoenix_dev_website/presentation/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
 
 class WhatIDo extends StatelessWidget {
@@ -11,97 +13,71 @@ class WhatIDo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cardSize = hasMobileFrame ? (600 - 32 - 8 - 16) / 2 : (MediaQuery.sizeOf(context).width - 8 - 32 - 16) / 2;
-    return Container(
-      padding: const EdgeInsets.all(16),
-      width: double.infinity,
-      child: Column(
-        children: [
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Service',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 30,
+    return SizedBox(
+      width: hasMobileFrame ? 600 : null,
+      child: CustomCard(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Service',
+                style: title1,
               ),
             ),
-          ),
-          Card(
-            margin: const EdgeInsets.only(bottom: 8),
-            child: Container(
-              padding: const EdgeInsets.all(8),
-              width: double.infinity,
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    ' • Flutter for native-looking mobile apps',
-                    style: TextStyle(
-                      fontSize: 22,
-                    ),
-                  ),
-                  Text(
-                    ' • Firebase for seamless backend integration',
-                    style: TextStyle(
-                      fontSize: 22,
-                    ),
-                  ),
-                  Text(
-                    ' • React for captivating web experiences',
-                    style: TextStyle(
-                      fontSize: 22,
-                    ),
-                  ),
-                  Text(
-                    ' • Node.js for scalable server-side logic',
-                    style: TextStyle(
-                      fontSize: 22,
-                    ),
-                  ),
-                  Text(
-                    ' • .NET for robust enterprise applications',
-                    style: TextStyle(
-                      fontSize: 22,
-                    ),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 16),
+            Text(
+              ' • Flutter for native-looking mobile apps',
+              style: body1,
             ),
-          ),
-          Row(
-            children: [
-              ServiceCard(
-                size: cardSize,
-                text: 'Mobile apps for Android and iOS',
-                icon: 'assets/icons/mobile.png',
-              ),
-              const SizedBox(width: 8),
-              ServiceCard(
-                size: cardSize,
-                text: 'Web applications',
-                icon: 'assets/icons/web.png',
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              ServiceCard(
-                size: cardSize,
-                text: 'Desktop apps for Windows, macOS and Linux',
-                icon: 'assets/icons/desktop.png',
-              ),
-              const SizedBox(width: 8),
-              ServiceCard(
-                size: cardSize,
-                text: 'Backed Service to support all apps',
-                icon: 'assets/icons/backend.png',
-              ),
-            ],
-          ),
-        ],
+            Text(
+              ' • Firebase for seamless backend integration',
+              style: body1,
+            ),
+            Text(
+              ' • React for captivating web experiences',
+              style: body1,
+            ),
+            Text(
+              ' • Node.js for scalable server-side logic',
+              style: body1,
+            ),
+            Text(
+              ' • .NET for robust enterprise applications',
+              style: body1,
+            ),
+            const SizedBox(height: 32),
+            const Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ServiceCard(
+                  text: 'Mobile apps for Android and iOS',
+                  icon: 'assets/icons/mobile.png',
+                ),
+                SizedBox(width: 8),
+                ServiceCard(
+                  text: 'Web applications',
+                  icon: 'assets/icons/web.png',
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            const Row(
+              children: [
+                ServiceCard(
+                  text: 'Desktop apps for Windows, macOS and Linux',
+                  icon: 'assets/icons/desktop.png',
+                ),
+                SizedBox(width: 8),
+                ServiceCard(
+                  text: 'Backend Service to support all apps',
+                  icon: 'assets/icons/backend.png',
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
