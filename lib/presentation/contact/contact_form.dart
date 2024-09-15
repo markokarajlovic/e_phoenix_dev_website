@@ -1,3 +1,4 @@
+import 'package:e_phoenix_dev_website/consts/color_consts.dart';
 import 'package:e_phoenix_dev_website/consts/text_consts.dart';
 import 'package:e_phoenix_dev_website/presentation/widgets/custom_card.dart';
 import 'package:emailjs/emailjs.dart';
@@ -27,13 +28,14 @@ class _ContactFormState extends State<ContactForm> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(width: widget.hasMobileFrame ? 600 : null,
+    return SizedBox(
+      width: widget.hasMobileFrame ? 600 : null,
       child: CustomCard(
         child: Form(
           key: _formKey,
           child: Column(
             children: [
-               Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Contact Me',
@@ -45,7 +47,7 @@ class _ContactFormState extends State<ContactForm> {
                 height: 98,
                 child: TextFormField(
                   controller: firstNameController,
-                  cursorColor: Colors.white,
+                  cursorColor: kWhite,
                   validator: (value) {
                     if (value?.isEmpty == true) {
                       return 'Enter a first name';
@@ -55,26 +57,26 @@ class _ContactFormState extends State<ContactForm> {
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: kWhite,
                     fontSize: 26,
                   ),
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.2),
+                    fillColor: kWhite.withOpacity(0.2),
                     floatingLabelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelText: 'First Name *',
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kWhite)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRed)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRedAccent)),
                   ),
                 ),
               ),
@@ -82,7 +84,7 @@ class _ContactFormState extends State<ContactForm> {
                 height: 98,
                 child: TextFormField(
                   controller: lastNameController,
-                  cursorColor: Colors.white,
+                  cursorColor: kWhite,
                   validator: (value) {
                     if (value?.isEmpty == true) {
                       return 'Enter a last name';
@@ -92,26 +94,26 @@ class _ContactFormState extends State<ContactForm> {
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: kWhite,
                     fontSize: 26,
                   ),
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.2),
+                    fillColor: kWhite.withOpacity(0.2),
                     floatingLabelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelText: 'Last Name *',
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kWhite)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRed)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRedAccent)),
                   ),
                 ),
               ),
@@ -119,7 +121,7 @@ class _ContactFormState extends State<ContactForm> {
                 height: 98,
                 child: TextFormField(
                   controller: emailController,
-                  cursorColor: Colors.white,
+                  cursorColor: kWhite,
                   validator: (value) {
                     RegExp regex = RegExp(
                       r'^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}])|(([a-zA-Z\-\d]+\.)+[a-zA-Z]{2,}))$',
@@ -135,26 +137,26 @@ class _ContactFormState extends State<ContactForm> {
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: kWhite,
                     fontSize: 26,
                   ),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.2),
+                    fillColor: kWhite.withOpacity(0.2),
                     floatingLabelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelText: 'Email *',
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kWhite)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRed)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRedAccent)),
                   ),
                 ),
               ),
@@ -162,28 +164,28 @@ class _ContactFormState extends State<ContactForm> {
                 height: 98,
                 child: TextFormField(
                   controller: phoneController,
-                  cursorColor: Colors.white,
+                  cursorColor: kWhite,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: kWhite,
                     fontSize: 26,
                   ),
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.2),
+                    fillColor: kWhite.withOpacity(0.2),
                     floatingLabelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelText: 'Phone Number',
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kWhite)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRed)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRedAccent)),
                   ),
                 ),
               ),
@@ -191,56 +193,56 @@ class _ContactFormState extends State<ContactForm> {
                 height: 98,
                 child: TextFormField(
                   controller: companyController,
-                  cursorColor: Colors.white,
+                  cursorColor: kWhite,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: kWhite,
                     fontSize: 26,
                   ),
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.2),
+                    fillColor: kWhite.withOpacity(0.2),
                     floatingLabelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelStyle: const TextStyle(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 20,
                     ),
                     labelText: 'Company / Organization',
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                    focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kWhite)),
+                    focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRed)),
+                    errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRedAccent)),
                   ),
                 ),
               ),
               TextFormField(
                 controller: messageController,
-                cursorColor: Colors.white,
+                cursorColor: kWhite,
                 maxLines: 4,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: kWhite,
                   fontSize: 26,
                 ),
                 textCapitalization: TextCapitalization.words,
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: Colors.white.withOpacity(0.2),
+                  fillColor: kWhite.withOpacity(0.2),
                   floatingLabelStyle: const TextStyle(
-                    color: Colors.white,
+                    color: kWhite,
                     fontSize: 20,
                   ),
                   labelStyle: const TextStyle(
-                    color: Colors.white,
+                    color: kWhite,
                     fontSize: 20,
                   ),
                   labelText: 'Message:',
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                  focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
-                  errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent)),
+                  focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kWhite)),
+                  focusedErrorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRed)),
+                  errorBorder: const UnderlineInputBorder(borderSide: BorderSide(color: kRedAccent)),
                 ),
               ),
               const SizedBox(height: 20),
@@ -251,13 +253,12 @@ class _ContactFormState extends State<ContactForm> {
                   onPressed: () {
                     _sendEmail();
                   },
-                  child:  Text(
+                  child: Text(
                     'Send',
                     style: buttonStyle,
                   ),
                 ),
               ),
-
             ],
           ),
         ),

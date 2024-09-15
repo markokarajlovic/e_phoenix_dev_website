@@ -13,15 +13,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
         title: 'ePhoenix dev',
         debugShowCheckedModeBanner: false,
-        // themeMode: ThemeMode.dark,
-        // darkTheme: ThemeData(
-        //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.red.shade900),
-        //   useMaterial3: true,
-        // ),
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
           useMaterial3: true,

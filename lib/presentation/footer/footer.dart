@@ -26,7 +26,7 @@ class Footer extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/icons/logo.png',
-                color: Colors.red,
+                color: kRed,
                 width: 32,
                 height: 32,
               ),
