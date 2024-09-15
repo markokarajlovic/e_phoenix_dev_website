@@ -7,14 +7,12 @@ class PortfolioItem extends StatelessWidget {
   final String description;
   final String? logo;
   final String link;
-  final String? logoUrl;
 
   const PortfolioItem({
     super.key,
     required this.name,
     required this.description,
     this.logo,
-    this.logoUrl,
     required this.link,
   });
 
@@ -27,8 +25,7 @@ class PortfolioItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            if (logo != null) Image.asset(logo!, width: 150, height: 150, fit: BoxFit.contain),
-            if (logoUrl != null) Image.network(logoUrl!, width: 150, height: 150, fit: BoxFit.contain),
+            if (logo != null) Image.asset(logo!, width: 100, height: 100, fit: BoxFit.contain),
             const SizedBox(width: 8),
             Expanded(
               child: Column(
