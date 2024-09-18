@@ -35,6 +35,7 @@ TextStyle body2 = GoogleFonts.roboto(
 TextStyle linkStyle = GoogleFonts.roboto(
   fontSize: 15,
   decoration: TextDecoration.underline,
+  decorationColor: kWhite,
   color: kWhite,
 );
 
@@ -57,6 +58,7 @@ TextStyle footerBody = GoogleFonts.roboto(
 TextStyle footerBodyLink = GoogleFonts.roboto(
   fontSize: 15,
   decoration: TextDecoration.underline,
+  decorationColor: const Color(0xFFBDBDBD),
   color: const Color(0xFFBDBDBD),
 );
 
